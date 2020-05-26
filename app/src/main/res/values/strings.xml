@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Chuck Norris Jokes</string>
+    <string name="strRandom">Random Joke</string>
+    <string name="strCategory">Joke Categories </string>
+    <string name="strSelect">Select a Category : </string>
+    <string name="strOption">Select an Option : </string>
+</resources>
