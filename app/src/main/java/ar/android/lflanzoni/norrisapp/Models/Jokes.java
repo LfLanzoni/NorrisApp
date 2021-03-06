@@ -21,12 +21,25 @@ public class Jokes {
     @SerializedName("updated_at")
     @Expose
     private String updatedAt;
-    @SerializedName("url_3")
+
+    @SerializedName("url_2")
     @Expose
     private String url;
     @SerializedName("value")
     @Expose
     private String value;
+
+    public String getNameStart() {
+        return nameStart;
+    }
+
+    public void setNameStart(String nameStart) {
+        this.nameStart = nameStart;
+    }
+
+    @SerializedName("nameStart")
+    @Expose
+    private String nameStart;
 
     public List<Object> getCategories() {
         return categories;
