@@ -62,6 +62,6 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.rvViewHolder> impl
     }
 
     public void updateCBU() {
-        String cbu = "es mi cbu papá";
+        String cbu = "Es mi cbu papá";
     }
 }
