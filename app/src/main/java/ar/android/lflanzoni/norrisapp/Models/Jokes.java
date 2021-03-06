@@ -20,13 +20,33 @@ public class Jokes {
     private String id;
     @SerializedName("updated_at")
     @Expose
-    private String updatedAt;
+    private String listo;
     @SerializedName("url")
     @Expose
     private String url;
     @SerializedName("value")
     @Expose
     private String value;
+
+    @SerializedName("value2")
+    @Expose
+    private String value2;
+
+    public String getListo() {
+        return listo;
+    }
+
+    public void setListo(String listo) {
+        this.listo = listo;
+    }
+
+    public String getValue2() {
+        return value2;
+    }
+
+    public void setValue2(String value2) {
+        this.value2 = value2;
+    }
 
     public List<Object> getCategories() {
         return categories;
@@ -61,11 +81,11 @@ public class Jokes {
     }
 
     public String getUpdatedAt() {
-        return updatedAt;
+        return listo;
     }
 
     public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+        this.listo = updatedAt;
     }
 
     public String getUrl() {
