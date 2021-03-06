@@ -21,7 +21,7 @@ public class Jokes {
     @SerializedName("updated_at")
     @Expose
     private String updatedAt;
-    @SerializedName("url")
+    @SerializedName("url_3")
     @Expose
     private String url;
     @SerializedName("value")
