@@ -24,9 +24,22 @@ public class Jokes {
     @SerializedName("url")
     @Expose
     private String url;
-    @SerializedName("value")
+    @SerializedName("val")
     @Expose
     private String value;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @SerializedName("name")
+    @Expose
+    private String name;
+
 
     public List<Object> getCategories() {
         return categories;
