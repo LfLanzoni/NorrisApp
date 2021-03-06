@@ -22,8 +22,6 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.rvViewHolder> impl
         }
     }
 
-
-
     public static class rvViewHolder extends RecyclerView.ViewHolder {
 
         public TextView tvCategory;
@@ -61,5 +59,9 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.rvViewHolder> impl
 
     public void setOnClickListener(View.OnClickListener mListener){
         this.listener=mListener;
+    }
+
+    public void updateCBU() {
+        String cbu = "Es mi cbu papá";
     }
 }
