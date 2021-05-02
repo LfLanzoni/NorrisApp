@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
     android:orientation="vertical"
-    tools:context=".Main.MainView">
+    tools:context=".main.MainView">
 
     <ImageView
         android:id="@+id/iVNameApp"
@@ -14,7 +14,8 @@
         android:layout_height="200dp"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
-        tools:src="@tools:sample/avatars" />
+        tools:src="@tools:sample/avatars"
+        android:contentDescription="@string/stlogo" />
 
     <TextView
         android:id="@+id/tvNameApp"
@@ -25,43 +26,39 @@
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="50sp"
-        android:textStyle="normal|bold"
-        />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_weight="1"
-        android:gravity="bottom|end"
-        android:orientation="vertical">
+        android:textStyle="normal|bold" />
 
         <TextView
             android:id="@+id/tvOption"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="168dp"
             android:layout_weight="1"
             android:fontFamily="@font/bangers"
+            android:gravity="center_vertical"
+            android:text="@string/strOption"
             android:textColor="@color/colorPrimary"
             android:textSize="35sp"
             android:textStyle="normal|bold"
-            android:gravity="center_vertical"
-            android:text="@string/strOption"
             android:visibility="visible" />
 
-        <android.support.design.button.MaterialButton
+        <Button
             android:id="@+id/btnRandom"
+            android:textColor="@color/colorWhite"
+            android:textStyle="normal|bold"
+            android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:text="@string/strRandom"
             android:theme="@style/Theme.MaterialComponents.Light"
             app:backgroundTint="@color/colorAccent" />
 
-        <android.support.design.button.MaterialButton
+        <Button
             android:id="@+id/btnCategory"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:textStyle="normal|bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -69,7 +66,5 @@
             android:text="@string/strCategory"
             android:theme="@style/Theme.MaterialComponents.Light"
             app:backgroundTint="@color/colorAccent" />
-
     </LinearLayout>
 
-</LinearLayout>
