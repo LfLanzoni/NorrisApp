@@ -3,6 +3,7 @@ package ar.android.lflanzoni.norrisapp.joke
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import ar.android.lflanzoni.norrisapp.R
 import ar.android.lflanzoni.norrisapp.Resource
@@ -38,7 +39,7 @@ class JokeView : AppCompatActivity() {
                     is Resource.Failure->{
                         binding.imgJoke.visibility = View.GONE
                         binding.progressBarJoke.visibility = View.VISIBLE
-                        Toast.makeText(this,result.exception.message, Toast.LENGTH_SHORT).show()
+                        showAlertDialog()
                     }
                 }
             })
@@ -57,10 +58,24 @@ class JokeView : AppCompatActivity() {
                     is Resource.Failure->{
                         binding.imgJoke.visibility = View.GONE
                         binding.progressBarJoke.visibility = View.VISIBLE
-                        Toast.makeText(this,result.exception.message, Toast.LENGTH_SHORT).show()
+                       showAlertDialog()
                     }
                 }
             })
         }
     }
+
+    private fun showAlertDialog(){
+        val builder: AlertDialog.Builder = let {
+            AlertDialog.Builder(it, R.style.MyDialogTheme)
+        }
+        builder.setMessage(R.string.dialog_message)
+                .setTitle(R.string.dialog_title)
+                .setPositiveButton(R.string.ok) { _, _ ->
+                    finish()
+                }
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
 }

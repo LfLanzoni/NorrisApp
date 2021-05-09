@@ -23,7 +23,7 @@ class MainModule {
 
     }
 
-    fun createWebService(): NorrisApi {
+    private fun createWebService(): NorrisApi {
         val retrofit = Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl("https://api.chucknorris.io/jokes/")

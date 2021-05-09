@@ -8,7 +8,3 @@ class JokesRepository(private val norrisApi: NorrisApi) {
     suspend fun getJoke(category: String) = norrisApi.getSelectJoke(category)
     suspend fun getRandomJoke() = norrisApi.getRandomJokes()
 }
-
-
-
-

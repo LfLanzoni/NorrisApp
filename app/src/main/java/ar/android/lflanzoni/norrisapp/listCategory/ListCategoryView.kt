@@ -3,15 +3,15 @@ package ar.android.lflanzoni.norrisapp.listCategory
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import ar.android.lflanzoni.norrisapp.adapters.RvAdapter
+import ar.android.lflanzoni.norrisapp.R
 import ar.android.lflanzoni.norrisapp.Resource
+import ar.android.lflanzoni.norrisapp.adapters.RvAdapter
 import ar.android.lflanzoni.norrisapp.databinding.ListCategoryViewBinding
 import ar.android.lflanzoni.norrisapp.joke.JokeView
 import org.koin.android.viewmodel.ext.android.viewModel
-import kotlin.collections.ArrayList
 
 class ListCategoryView: AppCompatActivity(),RvAdapter.OnCategoryClickListener{
 
@@ -32,12 +32,22 @@ class ListCategoryView: AppCompatActivity(),RvAdapter.OnCategoryClickListener{
                 }
                 is Resource.Success -> {
                     binding.progressBarCategory.visibility = View.GONE
-                    adapter = RvAdapter( ArrayList(result.data),this)
+                    adapter = RvAdapter(ArrayList(result.data), this)
                     binding.rvCategories.adapter = adapter
                 }
                 is Resource.Failure -> {
                     binding.progressBarCategory.visibility = View.VISIBLE
-                    Toast.makeText(this,result.exception.message, Toast.LENGTH_SHORT).show()
+                    val builder: AlertDialog.Builder = let {
+                        AlertDialog.Builder(it, R.style.MyDialogTheme)
+                    }
+                    builder.setMessage(R.string.dialog_message)
+                            .setTitle(R.string.dialog_title)
+                            .setPositiveButton(R.string.ok) { _, _ ->
+                                finish()
+                            }
+
+                    val dialog: AlertDialog = builder.create()
+                    dialog.show()
                 }
             }
 
